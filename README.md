@@ -2,7 +2,7 @@
 
 ## Software necessário
 
-xampp - https://sourceforge.net/projects/xampp/
+xampp - https://www.apachefriends.org/
 
 git - https://git-scm.com/download/win
 
@@ -216,7 +216,7 @@ php artisan db:seed --class=CategorySeeder
 
 Note que se executar duas vezes consecutivas o Seeder, teremos erros, porque pedimos que o slug não possa ser "repetido". Uma solução poderá passar por no início do Seeder, dentro da função ```public function run()``` a linha:
 
-**Nota importante: ** Esta linha apagará todos os dados que já estão na BD.
+**Nota importante:** Esta linha apagará todos os dados que já estão na BD.
 
 ## Criação do "routing" para a vista de listagem de categorias
 
