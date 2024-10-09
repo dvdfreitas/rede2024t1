@@ -129,9 +129,11 @@ Cada aluno contribuíra com uma parte do site. Os trabalhos atribuídos são:
 
 # Semana de 9 outubro
 
-Objetivos
+**Objetivos:**
 
 - Criação do modelo, migração, controler, seeder e factory para ```Category```;
+
+- Modificação da tabela da base de dados ```categories```;
 
 - Preenchimento da tabela ```categories`` através do seeder ```CategorySeeder```; 
 
@@ -149,6 +151,31 @@ php artisan make:model Category -mcfs
 
 Serão criados vários ficheiros. [Quais? Repare no nome dos ficheiros, principalmente no facto de estarem no singular ou plural.]
 
+## Modificação da tabela da base de dados
 
+Deverá editar o ficheiro que se encontra dentro da pasta ```database/migrations/``` e que terá um nome semelhante a ```2024_10_09_130553_create_categories_table.php```.
 
+Para ser mais fácil encontrar o ficheiro, caso esteja a utilizar o Visual Studio Code, poderá procurá-lo fazendo ```Ctrl+P``` e escrever parte do nome, por exemplo ```migra catego```.
 
+Para o nosso caso, vamos querer que a tabela guarde as seguintes informações:
+
+- name: String com o nome da categoria;
+
+- slug: Identificador **único** (em string); [Qual a vantagem de usar um slug em vez do ID?]
+
+- description: Descrição *(opcional)* do que representa a categoria;
+
+- image: String que terá o endereço da imagem da categoria *(opcional)*.
+
+Para isso deverá alterar a função ```public function up(): void```php:
+
+```php
+Schema::create('categories', function (Blueprint $table) {
+    $table->id();
+    $table->string('name');
+    $table->string('slug')->unique();
+    $table->text('description')->nullable();
+    $table->string('image')->nullable();
+    $table->timestamps();
+});
+```
