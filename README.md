@@ -222,3 +222,11 @@ Note que se executar duas vezes consecutivas o Seeder, teremos erros, porque ped
 
 Queremos agora que o utilizador ao chegar ao endereço ```http://localhost:8000/categories``` encontre a listagem de todas as categorias.
 
+Para isso vamos acrescentar uma rota ao ficheiro ```web.php``` que se encontra na pasta ```routes```. Vamos também colocar na variável ```$categories``` todo o conteúdo que está na tabela ```categories```através de ```Category::all()```. Não se esqueça de colocar ```use App\Models\Category``` no início do ficheiro ```web.php```.
+
+```php
+Route::get('/categories', function () {
+    $categories = Category::all();    
+    return view('categories.index', compact('categories'));
+});
+```
