@@ -180,9 +180,9 @@ Schema::create('categories', function (Blueprint $table) {
 });
 ```
 
-## Preenchimento da tabela ```categories`` através do seeder ```CategorySeeder```
+## Preenchimento da tabela categories através do seeder CategorySeeder
 
-Deverá modificar o ficheiro que se encontra na pasta ```database/seeders/``` com o nome ```CategorySeeder.php```, inserindo dentro da função ```public function run() {}```php
+Deverá modificar o ficheiro que se encontra na pasta ```database/seeders/``` com o nome ```CategorySeeder.php```, inserindo dentro da função ```public function run() {}```
 
 ```
         Category::create([
