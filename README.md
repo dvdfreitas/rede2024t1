@@ -33,16 +33,16 @@ VS Code - https://code.visualstudio.com/
 Vamos instalar um projeto que iremos chamar ```redes2024```. Note que o nome do projeto é o nome da pasta que será criada e deverá estar relacionado com o nome do seu projeto. 
 
 ```bash
-composer create-project laravel/laravel redes2024
+composer create-project laravel/laravel redes2024t1
 ```
 
 ### Jetstream
 
 De seguida deverá entrar na pasta do projeto:
 
-```cd redes2024```
+```cd redes2024t1```
 
-Já dentro da pasta `redes2024` deverá executar o seguinte comando:
+Já dentro da pasta `redes2024t1` deverá executar o seguinte comando:
 
 ```bash
 composer require laravel/jetstream
@@ -88,20 +88,67 @@ Finalmente, deverá executar as migrações:
 php artisan migrate
 ```
 
-## Criação de um modelo 
+## Iniciar o servidor
 
-Para implementar o modelo visto nas aulas ```Teacher``` deverá utilizar o comando:
+Como estamos a usar o ```MySQL``` teremos que ter o servidor a funcionar. Para o nosso caso, terá que estar em execução no XAMPP (ou LAMPP se tiver em Linux).
+
+Depois deverá ter executar na raíz da pasta do projecto:
 
 ```bash
-php artisan make:model Teacher
+php artisan serve
+```
+
+Para verificar se está tudo funcional, poderá, a partir do seu browser favorito, abrir o endereço retornado pelo comando anterior. Normalmente será 127.0.0.1 (localhost) e porta 8000:
+
+```
+localhost:8000
+```
+
+## Criação de componente 
+
+
+
+## Criação de um modelo 
+
+Para implementar o modelo visto nas aulas ```Organization``` deverá utilizar o comando:
+
+```bash
+php artisan make:model Organization
 ```
 
 No entanto, como vimos, vamos criar sempre uma migração (m), factory (f), Seeder (s), e controlador. Pelo que podemos usar a opção ```-mfcs```.
 
 ```bash
-php artisan make:model Teacher -mcfs
+php artisan make:model Organization -mcfs
 ```
 
 # Trabalho
 
 Cada aluno contribuíra com uma parte do site. Os trabalhos atribuídos são:
+
+
+# Semana de 9 outubro
+
+Objetivos
+
+- Criação do modelo, migração, controler, seeder e factory para ```Category```;
+
+- Preenchimento da tabela ```categories`` através do seeder ```CategorySeeder```; 
+
+- Criação do "routing" para a vista de listagem de categorias;
+
+- Criação da vista para a listagem das categorias.
+
+## Criação do modelo, migração, seeder e factory para ```Category```
+
+Para criar o modelo ```Category``` assim como a migração (m), controller (c), seeder (s) e factory (f) deverá executar na linha de comandos (dentro da pasta raíz do projeto):
+
+```
+php artisan make:model Category -mcfs
+```
+
+Serão criados vários ficheiros. [Quais? Repare no nome dos ficheiros, principalmente no facto de estarem no singular ou plural.]
+
+
+
+
